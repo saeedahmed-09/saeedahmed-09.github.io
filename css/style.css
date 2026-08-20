@@ -743,10 +743,17 @@ h1,h2,h3,h4{
   padding:20px 22px; border:2px solid var(--ink); border-radius:var(--r-sm); margin-bottom:12px;
   display:flex; justify-content:space-between; align-items:center; gap:16px;
   background:var(--paper-2);
+  flex-wrap:wrap;
 }
 .contact-list li:last-child{ margin-bottom:0; }
-.contact-list .clabel{ font-family:var(--font-mono); font-size:11px; letter-spacing:.08em; color:var(--ink-faint); text-transform:uppercase; font-weight:700; }
-.contact-list .cval{ font-size:15px; text-align:right; font-weight:700; }
+.contact-list .clabel{ font-family:var(--font-mono); font-size:11px; letter-spacing:.08em; color:var(--ink-faint); text-transform:uppercase; font-weight:700; flex:none; }
+.contact-list .cval{
+  font-size:15px; text-align:right; font-weight:700;
+  min-width:0;
+  flex:1 1 auto;
+  overflow-wrap:anywhere;
+  word-break:break-word;
+}
 .contact-list a:hover{ color:var(--purple-lt); }
 
 .social-row{ display:flex; gap:12px; margin-top:32px; flex-wrap:wrap; }
@@ -771,6 +778,11 @@ h1,h2,h3,h4{
 .form-field textarea{ resize:vertical; min-height:100px; }
 
 @media (max-width:860px){ .contact-grid{ grid-template-columns:1fr; gap:48px; } }
+
+@media (max-width:400px){
+  .contact-list li{ flex-direction:column; align-items:flex-start; gap:6px; }
+  .contact-list .cval{ text-align:left; }
+}
 
 /* ---------- mobile: keep decorative blobs, but clustered clear of text ---------- */
 @media (max-width:700px){
