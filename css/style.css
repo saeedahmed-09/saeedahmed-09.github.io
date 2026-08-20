@@ -740,7 +740,7 @@ h1,h2,h3,h4{
 }
 .contact-list{ margin-top:32px; }
 .contact-list li{
-  padding:20px; border:2px solid var(--ink); border-radius:var(--r-sm); margin-bottom:12px;
+  padding:20px 22px; border:2px solid var(--ink); border-radius:var(--r-sm); margin-bottom:12px;
   display:flex; justify-content:space-between; align-items:center; gap:16px;
   background:var(--paper-2);
 }
