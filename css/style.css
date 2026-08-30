@@ -839,7 +839,7 @@ h1,h2,h3,h4{
 @media (max-width:520px){ .shot-cover-grid{ grid-template-columns:1fr; } }
 
 .shot-grid{
-  display:grid; grid-template-columns:repeat(2,1fr); gap:32px;
+  display:grid; grid-template-columns:repeat(3,1fr); gap:28px;
 }
 .shot-card{
   border:2px solid var(--ink); border-radius:var(--r-lg);
@@ -870,7 +870,8 @@ h1,h2,h3,h4{
   max-height:160px;
   overflow-y:auto;
 }
-@media (max-width:760px){ .shot-grid{ grid-template-columns:1fr; } }
+@media (max-width:920px){ .shot-grid{ grid-template-columns:repeat(2,1fr); } }
+@media (max-width:560px){ .shot-grid{ grid-template-columns:1fr; } }
 .shot-body-head{ display:flex; align-items:center; justify-content:space-between; margin-bottom:10px; gap:10px; }
 .shot-body-head .clabel{ margin-bottom:0; }
 .copy-btn{
