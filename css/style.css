@@ -850,13 +850,14 @@ h1,h2,h3,h4{
 }
 .shot-card:hover{ transform:translate(-2px,3px); box-shadow:0 2px 0 var(--shadow); }
 .shot-thumb{
-  aspect-ratio:1/1;
+  aspect-ratio:4549/3098;
   background:var(--purple-tint);
   position:relative;
   cursor:zoom-in;
   overflow:hidden;
 }
-.shot-thumb img{ width:100%; height:100%; object-fit:cover; display:block; }
+.shot-thumb:has(img){ aspect-ratio:auto; }
+.shot-thumb img{ width:100%; height:auto; display:block; }
 .shot-body{ padding:22px; }
 .shot-body .clabel{
   font-family:var(--font-mono); font-size:10px; letter-spacing:.12em; text-transform:uppercase;
