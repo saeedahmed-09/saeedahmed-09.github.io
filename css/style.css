@@ -903,3 +903,45 @@ h1,h2,h3,h4{
 .agency-project-placeholder h3{font-size:20px;line-height:1.2}
 .agency-project-placeholder p{color:var(--ink-soft);font-size:13px;line-height:1.6;margin-bottom:0}
 @media(max-width:760px){.agency-grid{grid-template-columns:1fr}.agency-card{min-height:175px}.agency-project-grid{grid-template-columns:1fr}}
+
+
+/* ---------- Agency cards: Prompt Gallery-inspired cover layout ---------- */
+.agency-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:26px}
+.agency-card{display:block;min-height:0;padding:0;background:var(--paper-2);border-radius:var(--r-lg);overflow:hidden}
+.agency-card:nth-child(n){background:var(--paper-2)}
+.agency-card-visual{height:220px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;padding:22px;background:linear-gradient(135deg,var(--purple-tint),#171321 72%)}
+.agency-card:nth-child(4n+2) .agency-card-visual{background:linear-gradient(135deg,#514018,var(--yellow-tint) 68%,#171321)}
+.agency-card:nth-child(4n+3) .agency-card-visual{background:linear-gradient(135deg,#542b25,var(--coral-tint) 68%,#171321)}
+.agency-card:nth-child(4n+4) .agency-card-visual{background:linear-gradient(135deg,#17483e,#17352f 68%,#111820)}
+.agency-card-visual:after{content:"";position:absolute;width:190px;height:190px;border:1px solid rgba(255,255,255,.15);border-radius:50%;right:-42px;bottom:-82px;box-shadow:0 0 0 22px rgba(255,255,255,.035),0 0 0 48px rgba(255,255,255,.025)}
+.agency-card .agency-number,.agency-wordmark,.agency-visual-caption{position:relative;z-index:1}
+.agency-card .agency-number{position:static;top:auto;left:auto;font-size:10px;color:rgba(255,255,255,.68);letter-spacing:.16em}
+.agency-wordmark{font-size:clamp(26px,3vw,40px);font-weight:900;line-height:1;text-transform:uppercase;letter-spacing:-.04em;max-width:90%;text-shadow:0 4px 20px rgba(0,0,0,.2)}
+.agency-visual-caption{font-size:9px;letter-spacing:.2em;font-weight:800;color:rgba(255,255,255,.65)}
+.agency-card-body{padding:20px 22px 22px}
+.agency-card-body h3{font-size:19px;line-height:1.15;margin-bottom:12px}
+.agency-card .agency-link{display:flex;justify-content:space-between;align-items:center;margin-top:0;padding-top:13px;border-top:1px solid var(--line);font-size:10px}
+.agency-card:hover{transform:translateY(-5px);background:var(--paper-2)}
+.agency-card:hover .agency-wordmark{transform:translateX(5px)}
+.agency-wordmark{transition:transform .25s ease}
+.agency-project-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.agency-project-card{border:2px solid var(--ink);border-radius:var(--r-lg);background:var(--paper-2);overflow:hidden;box-shadow:0 5px 0 var(--shadow);transition:transform .2s ease,box-shadow .2s ease}
+.agency-project-card:hover{transform:translateY(-4px);box-shadow:0 8px 0 var(--shadow)}
+.agency-project-art{aspect-ratio:4/3;position:relative;overflow:hidden;padding:22px;display:flex;flex-direction:column;justify-content:space-between;background:linear-gradient(145deg,#35245d,#171321 75%);isolation:isolate}
+.agency-project-art:before{content:"";position:absolute;width:220px;height:220px;border:1px solid rgba(255,255,255,.2);border-radius:50%;right:-70px;top:-90px;box-shadow:0 0 0 22px rgba(255,255,255,.04),0 0 0 50px rgba(255,255,255,.025);z-index:-1}
+.agency-project-art:after{content:"";position:absolute;inset:auto 0 0;height:48%;background:linear-gradient(transparent,rgba(0,0,0,.35));z-index:-1}
+.agency-project-art .art-index,.agency-project-art .art-kicker,.agency-project-art strong,.agency-project-art .art-foot{position:relative;z-index:1}
+.agency-project-art .art-index{font-size:10px;color:rgba(255,255,255,.65);letter-spacing:.14em}
+.agency-project-art .art-kicker,.agency-project-art .art-foot{font-size:8px;letter-spacing:.18em;font-weight:800;color:rgba(255,255,255,.7)}
+.agency-project-art strong{font-size:clamp(23px,3vw,34px);line-height:.98;letter-spacing:-.04em}
+.art-social{background:linear-gradient(145deg,#5a3b18,#21190e 78%)}
+.art-feature{background:linear-gradient(145deg,#174d46,#101d20 78%)}
+.art-promo{background:linear-gradient(145deg,#673329,#241512 78%)}
+.art-brand{background:linear-gradient(145deg,#3c326e,#18152b 78%)}
+.art-event{background:linear-gradient(145deg,#254b70,#121d2b 78%)}
+.agency-project-info{padding:18px 20px 21px}
+.agency-project-info>span{font-size:9px;letter-spacing:.15em;color:var(--purple-lt);font-weight:800}
+.agency-project-info h3{font-size:16px;line-height:1.2;margin:10px 0}
+.agency-project-info p{font-size:12px;line-height:1.65;color:var(--ink-soft);margin:0}
+@media(max-width:900px){.agency-grid,.agency-project-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.agency-grid,.agency-project-grid{grid-template-columns:1fr}.agency-card-visual{height:190px}}
